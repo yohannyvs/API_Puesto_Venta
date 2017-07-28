@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="examen" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost;Initial Catalog=examen;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="examenConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.categoria" Member="categoria">
+    <Type Name="categoria">
+      <Column Name="cod_cat" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_cat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="categoria_producto" Member="producto" ThisKey="cod_cat" OtherKey="cod_cat" Type="producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.deseos" Member="deseos">
+    <Type Name="deseos">
+      <Column Name="cod_des" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cedula" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cod_prod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="producto_deseos" Member="producto" ThisKey="cod_prod" OtherKey="cod_prod" Type="producto" IsForeignKey="true" />
+      <Association Name="usuarios_deseos" Member="usuarios" ThisKey="cedula" OtherKey="cedula" Type="usuarios" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.producto" Member="producto">
+    <Type Name="producto">
+      <Column Name="cod_prod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombreprod" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="cod_cat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="marca" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="precio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="producto_deseos" Member="deseos" ThisKey="cod_prod" OtherKey="cod_prod" Type="deseos" />
+      <Association Name="categoria_producto" Member="categoria" ThisKey="cod_cat" OtherKey="cod_cat" Type="categoria" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usuarios" Member="usuarios">
+    <Type Name="usuarios">
+      <Column Name="cedula" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="apellido" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="direc" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contraseña" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="uid" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="usuarios_deseos" Member="deseos" ThisKey="cedula" OtherKey="cedula" Type="deseos" />
+    </Type>
+  </Table>
+  <Function Name="dbo.delete_carrito" Method="delete_carrito">
+    <Parameter Name="cod_des" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.update_usuario" Method="update_usuario">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="apellido" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="telefono" Type="System.Int32" DbType="Int" />
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="uid" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.delete_catalogo" Method="delete_catalogo">
+    <Parameter Name="cod_cat" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.delete_producto" Method="delete_producto">
+    <Parameter Name="cod_prod" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insert_carrito" Method="insert_carrito">
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="id_producto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insert_catalogo" Method="insert_catalogo">
+    <Parameter Name="categoria" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insert_producto" Method="insert_producto">
+    <Parameter Name="producto" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="cod_cat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="marca" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="precio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insert_usuario" Method="insert_usuario">
+    <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="apellido" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="telefono" Type="System.Int32" DbType="Int" />
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="uid" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.select_carrito" Method="select_carrito">
+    <ElementType Name="select_carritoResult">
+      <Column Name="cod_prod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreprod" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="precio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.select_categoria" Method="select_categoria">
+    <ElementType Name="select_categoriaResult">
+      <Column Name="nombre_cat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.select_producto_categoria" Method="select_producto_categoria">
+    <Parameter Name="nombre_cat" Type="System.String" DbType="VarChar(1)" />
+    <ElementType Name="select_producto_categoriaResult">
+      <Column Name="nombreprod" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="marca" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_cat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="precio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.select_productos" Method="select_productos">
+    <ElementType Name="select_productosResult">
+      <Column Name="nombreprod" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="marca" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_cat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="precio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.update_carrito" Method="update_carrito">
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="id_producto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.update_catalogo" Method="update_catalogo">
+    <Parameter Name="cod_cat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="categoria" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.update_producto" Method="update_producto">
+    <Parameter Name="cod_prod" Type="System.Int32" DbType="Int" />
+    <Parameter Name="producto" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="cod_cat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="marca" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="precio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
