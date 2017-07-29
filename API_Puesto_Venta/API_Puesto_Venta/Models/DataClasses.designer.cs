@@ -114,7 +114,7 @@ namespace API_Puesto_Venta.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.update_usuario")]
-		public int update_usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string pass, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string uid)
+		public int update_usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pass, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string uid)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, apellido, direccion, telefono, correo, pass, uid);
 			return ((int)(result.ReturnValue));
@@ -135,28 +135,28 @@ namespace API_Puesto_Venta.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insert_carrito")]
-		public int insert_carrito([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad)
+		public int insert_carrito([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), correo, id_producto, cantidad);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insert_catalogo")]
-		public int insert_catalogo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string categoria)
+		public int insert_catalogo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string categoria)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoria);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insert_producto")]
-		public int insert_producto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cod_cat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string marca, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad)
+		public int insert_producto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cod_cat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string marca, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), producto, cod_cat, marca, precio, cantidad);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insert_usuario")]
-		public int insert_usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string pass, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string uid)
+		public int insert_usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pass, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string uid)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, direccion, telefono, correo, pass, uid);
 			return ((int)(result.ReturnValue));
@@ -177,7 +177,7 @@ namespace API_Puesto_Venta.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.select_producto_categoria")]
-		public ISingleResult<select_producto_categoriaResult> select_producto_categoria([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string nombre_cat)
+		public ISingleResult<select_producto_categoriaResult> select_producto_categoria([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombre_cat)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre_cat);
 			return ((ISingleResult<select_producto_categoriaResult>)(result.ReturnValue));
@@ -191,21 +191,21 @@ namespace API_Puesto_Venta.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.update_carrito")]
-		public int update_carrito([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad)
+		public int update_carrito([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), correo, id_producto, cantidad);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.update_catalogo")]
-		public int update_catalogo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cod_cat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string categoria)
+		public int update_catalogo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cod_cat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string categoria)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cod_cat, categoria);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.update_producto")]
-		public int update_producto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cod_prod, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cod_cat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string marca, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad)
+		public int update_producto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cod_prod, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string producto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cod_cat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string marca, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cantidad)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cod_prod, producto, cod_cat, marca, precio, cantidad);
 			return ((int)(result.ReturnValue));
@@ -1248,6 +1248,8 @@ namespace API_Puesto_Venta.Models
 		
 		private int _precio;
 		
+		private int _cantidad;
+		
 		public select_productosResult()
 		{
 		}
@@ -1312,6 +1314,22 @@ namespace API_Puesto_Venta.Models
 				if ((this._precio != value))
 				{
 					this._precio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad", DbType="Int NOT NULL")]
+		public int cantidad
+		{
+			get
+			{
+				return this._cantidad;
+			}
+			set
+			{
+				if ((this._cantidad != value))
+				{
+					this._cantidad = value;
 				}
 			}
 		}

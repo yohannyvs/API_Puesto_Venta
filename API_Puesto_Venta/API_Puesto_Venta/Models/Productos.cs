@@ -7,32 +7,32 @@ namespace API_Puesto_Venta.Models
 {
     public class Productos
     {
-        private int cod_prod;
         private string nombreprod;
         private string marca;
         private int precio;
         private int cantidad;
+        private string nombre_cat;
 
         public Productos() { }
 
-        public Productos(int cod_prod, string nombreprod, string marca, int precio, int cantidad)
+        public Productos(string nombreprod, string nombre_cat, string marca, int precio, int cantidad)
         {
-            this.cod_prod = cod_prod;
             this.nombreprod = nombreprod;
+            this.nombre_cat = nombre_cat;
             this.marca = marca;
             this.precio = precio;
             this.cantidad = cantidad;
         }
 
-        public int Cod_prod
-        {
-            get { return cod_prod; }
-            set { cod_prod = value; }
-        }
         public string Nombreprod
         {
             get { return nombreprod; }
             set { nombreprod = value; }
+        }
+        public string Nombre_cat
+        {
+            get { return nombre_cat; }
+            set { nombre_cat = value; }
         }
         public string Marca
         {

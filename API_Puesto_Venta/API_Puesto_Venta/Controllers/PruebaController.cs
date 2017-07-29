@@ -13,7 +13,7 @@ namespace API_Puesto_Venta.Controllers
         DataClassesDataContext dc = new DataClassesDataContext();
         // GET: api/Prueba
         
-        public IEnumerable<string> Get()
+        public IEnumerable<string> GetCategorias()
         {
             List<string> list = new List<string>();
 
@@ -27,25 +27,35 @@ namespace API_Puesto_Venta.Controllers
             return list;
         }
 
-        // GET: api/Prueba/5
-        public string Get(int id)
+        /* GET: api/Prueba/5
+        [HttpGet]
+        public string Get(string id)
         {
-            return "value";
-        }
+            return "value " + id;
+        }*/
+
+
 
         // POST: api/Prueba
-        public void Post([FromBody]string value)
+        [HttpPost]
+        public IHttpActionResult Post(Categoria value)
         {
+            int res = dc.insert_catalogo(value.Nombre_cat);
+
+            return Ok();
         }
 
         // PUT: api/Prueba/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Productos value)
         {
+
         }
 
         // DELETE: api/Prueba/5
+
         public void Delete(int id)
         {
+            int res = dc.delete_catalogo(id);
         }
     }
 }

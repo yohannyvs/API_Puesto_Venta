@@ -47,13 +47,13 @@
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.update_usuario" Method="update_usuario">
-    <Parameter Name="nombre" Type="System.String" DbType="VarChar(1)" />
-    <Parameter Name="apellido" Type="System.String" DbType="VarChar(1)" />
-    <Parameter Name="direccion" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="apellido" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="telefono" Type="System.Int32" DbType="Int" />
-    <Parameter Name="correo" Type="System.String" DbType="VarChar(1)" />
-    <Parameter Name="pass" Type="System.String" DbType="VarChar(1)" />
-    <Parameter Name="uid" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="uid" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.delete_catalogo" Method="delete_catalogo">
@@ -65,32 +65,32 @@
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.insert_carrito" Method="insert_carrito">
-    <Parameter Name="correo" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="id_producto" Type="System.Int32" DbType="Int" />
     <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.insert_catalogo" Method="insert_catalogo">
-    <Parameter Name="categoria" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="categoria" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.insert_producto" Method="insert_producto">
-    <Parameter Name="producto" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="producto" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="cod_cat" Type="System.Int32" DbType="Int" />
-    <Parameter Name="marca" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="marca" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="precio" Type="System.Int32" DbType="Int" />
     <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.insert_usuario" Method="insert_usuario">
     <Parameter Name="cedula" Type="System.Int32" DbType="Int" />
-    <Parameter Name="nombre" Type="System.String" DbType="VarChar(1)" />
-    <Parameter Name="apellido" Type="System.String" DbType="VarChar(1)" />
-    <Parameter Name="direccion" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="apellido" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="telefono" Type="System.Int32" DbType="Int" />
-    <Parameter Name="correo" Type="System.String" DbType="VarChar(1)" />
-    <Parameter Name="pass" Type="System.String" DbType="VarChar(1)" />
-    <Parameter Name="uid" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="uid" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.select_carrito" Method="select_carrito">
@@ -107,7 +107,7 @@
     </ElementType>
   </Function>
   <Function Name="dbo.select_producto_categoria" Method="select_producto_categoria">
-    <Parameter Name="nombre_cat" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="nombre_cat" Type="System.String" DbType="VarChar(30)" />
     <ElementType Name="select_producto_categoriaResult">
       <Column Name="nombreprod" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="marca" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
@@ -121,24 +121,25 @@
       <Column Name="marca" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="nombre_cat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="precio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.update_carrito" Method="update_carrito">
-    <Parameter Name="correo" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="id_producto" Type="System.Int32" DbType="Int" />
     <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.update_catalogo" Method="update_catalogo">
     <Parameter Name="cod_cat" Type="System.Int32" DbType="Int" />
-    <Parameter Name="categoria" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="categoria" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.update_producto" Method="update_producto">
     <Parameter Name="cod_prod" Type="System.Int32" DbType="Int" />
-    <Parameter Name="producto" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="producto" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="cod_cat" Type="System.Int32" DbType="Int" />
-    <Parameter Name="marca" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="marca" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="precio" Type="System.Int32" DbType="Int" />
     <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />

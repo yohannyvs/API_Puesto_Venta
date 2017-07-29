@@ -12,6 +12,10 @@ namespace API_Puesto_Venta
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            HttpConfiguration htttpconfig = GlobalConfiguration.Configuration;
+            htttpconfig.Formatters.Remove(htttpconfig.Formatters.XmlFormatter);
+
         }
     }
 }

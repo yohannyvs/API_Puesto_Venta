@@ -42,4 +42,3 @@ C:\Users\mneakira00\Documents\Progra V\API_Puesto_Venta\API_Puesto_Venta\API_Pue
 C:\Users\mneakira00\Documents\Progra V\API_Puesto_Venta\API_Puesto_Venta\API_Puesto_Venta\bin\es\System.Web.Http.WebHost.resources.dll
 C:\Users\mneakira00\Documents\Progra V\API_Puesto_Venta\API_Puesto_Venta\API_Puesto_Venta\obj\Debug\API_Puesto_Venta.dll
 C:\Users\mneakira00\Documents\Progra V\API_Puesto_Venta\API_Puesto_Venta\API_Puesto_Venta\obj\Debug\API_Puesto_Venta.pdb
-C:\Users\mneakira00\Documents\Progra V\API_Puesto_Venta\API_Puesto_Venta\API_Puesto_Venta\obj\Debug\API_Puesto_Venta.csprojResolveAssemblyReference.cache
