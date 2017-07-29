@@ -25,8 +25,8 @@ namespace API_Puesto_Venta.Controllers
                         res.cod_des,
                         res.cod_prod,
                         res.nombreprod,
-                        res.precio,
-                        res.cantidad
+                        res.cantidad,
+                        res.precio
                     ));
             }
 
@@ -53,18 +53,9 @@ namespace API_Puesto_Venta.Controllers
         }
 
         [HttpDelete]
-        public IHttpActionResult Delete_Carrito(int value)
+        public void Delete_Carrito(int value)
         {
             int res = dc.delete_carrito(value);
-
-            if (res == 1)
-            {
-                return NotFound();
-            }
-            else
-            {
-                return Ok();
-            }
         }
     }
 }

@@ -58,18 +58,9 @@ namespace API_Puesto_Venta.Controllers
         }
 
         [HttpDelete]
-        public IHttpActionResult Delete_Producto(int value)
+        public void Delete_Producto(int value)
         {
             int res = dc.delete_producto(value);
-
-            if (res == 1)
-            {
-                return NotFound();
-            }
-            else
-            {
-                return Ok();
-            }
         }
     }
 }
