@@ -11,14 +11,14 @@ namespace API_Puesto_Venta.Models
         private string marca;
         private int precio;
         private int cantidad;
-        private string nombre_cat;
+        private int cod_cat;
 
         public Productos() { }
 
-        public Productos(string nombreprod, string nombre_cat, string marca, int precio, int cantidad)
+        public Productos(string nombreprod, int cod_cat, string marca, int precio, int cantidad)
         {
             this.nombreprod = nombreprod;
-            this.nombre_cat = nombre_cat;
+            this.cod_cat = cod_cat;
             this.marca = marca;
             this.precio = precio;
             this.cantidad = cantidad;
@@ -29,10 +29,10 @@ namespace API_Puesto_Venta.Models
             get { return nombreprod; }
             set { nombreprod = value; }
         }
-        public string Nombre_cat
+        public int Cod_cat
         {
-            get { return nombre_cat; }
-            set { nombre_cat = value; }
+            get { return cod_cat; }
+            set { cod_cat = value; }
         }
         public string Marca
         {

@@ -93,14 +93,6 @@
     <Parameter Name="uid" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.select_carrito" Method="select_carrito">
-    <ElementType Name="select_carritoResult">
-      <Column Name="cod_prod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="nombreprod" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="precio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.select_categoria" Method="select_categoria">
     <ElementType Name="select_categoriaResult">
       <Column Name="nombre_cat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
@@ -117,6 +109,7 @@
   </Function>
   <Function Name="dbo.select_productos" Method="select_productos">
     <ElementType Name="select_productosResult">
+      <Column Name="cod_prod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="nombreprod" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="marca" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="nombre_cat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
@@ -143,5 +136,14 @@
     <Parameter Name="precio" Type="System.Int32" DbType="Int" />
     <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.select_carrito" Method="select_carrito">
+    <ElementType Name="select_carritoResult">
+      <Column Name="cod_des" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cod_prod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreprod" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="precio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

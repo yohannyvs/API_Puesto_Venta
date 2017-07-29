@@ -14,15 +14,16 @@ namespace API_Puesto_Venta.Controllers
         // GET: api/Prueba
 
         [HttpGet]
-        public IEnumerable<Productos> GetProductos()
+        public IEnumerable<S_Producto> GetProductos()
         {
-            List<Productos> list = new List<Productos>();
+            List<S_Producto> list = new List<S_Producto>();
 
             var result = dc.select_productos();
 
             foreach (var res in result)
             {
-                list.Add(new Productos(
+                list.Add(new S_Producto(
+                        res.cod_prod,
                         res.nombreprod,
                         res.nombre_cat,
                         res.marca,
@@ -34,28 +35,41 @@ namespace API_Puesto_Venta.Controllers
             return list;
         }
 
-        [HttpGet]
-        public IEnumerable<Productos> GetProducto(string categoria)
+        [HttpPost]
+        public IHttpActionResult Add_Producto(Productos value)
         {
-            List<Productos> list = new List<Productos>();
+            int res = dc.insert_producto(
+                    value.Nombreprod,
+                    value.Cod_cat,
+                    value.Marca,
+                    value.Precio,
+                    value.Cantidad
+                );
 
-            var result = dc.select_productos();
-
-            foreach (var res in result)
+            if (res == 1)
             {
-                if (res.nombre_cat == categoria)
-                {
-                    list.Add(new Productos(
-                        res.nombreprod,
-                        res.nombre_cat,
-                        res.marca,
-                        res.precio,
-                        res.cantidad
-                    ));
-                } 
+                return NotFound();
             }
+            else
+            {
+                return Ok();
+            }
+            
+        }
 
-            return list;
+        [HttpDelete]
+        public IHttpActionResult Delete_Producto(int value)
+        {
+            int res = dc.delete_producto(value);
+
+            if (res == 1)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok();
+            }
         }
     }
 }

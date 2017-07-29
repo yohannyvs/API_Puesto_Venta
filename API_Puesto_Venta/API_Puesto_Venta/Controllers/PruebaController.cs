@@ -52,7 +52,7 @@ namespace API_Puesto_Venta.Controllers
         }
 
         // DELETE: api/Prueba/5
-
+        [HttpDelete]
         public void Delete(int id)
         {
             int res = dc.delete_catalogo(id);

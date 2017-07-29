@@ -162,13 +162,6 @@ namespace API_Puesto_Venta.Models
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.select_carrito")]
-		public ISingleResult<select_carritoResult> select_carrito()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<select_carritoResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.select_categoria")]
 		public ISingleResult<select_categoriaResult> select_categoria()
 		{
@@ -209,6 +202,13 @@ namespace API_Puesto_Venta.Models
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cod_prod, producto, cod_cat, marca, precio, cantidad);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.select_carrito")]
+		public ISingleResult<select_carritoResult> select_carrito()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<select_carritoResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1051,86 +1051,6 @@ namespace API_Puesto_Venta.Models
 		}
 	}
 	
-	public partial class select_carritoResult
-	{
-		
-		private int _cod_prod;
-		
-		private string _nombreprod;
-		
-		private int _precio;
-		
-		private int _cantidad;
-		
-		public select_carritoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cod_prod", DbType="Int NOT NULL")]
-		public int cod_prod
-		{
-			get
-			{
-				return this._cod_prod;
-			}
-			set
-			{
-				if ((this._cod_prod != value))
-				{
-					this._cod_prod = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreprod", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string nombreprod
-		{
-			get
-			{
-				return this._nombreprod;
-			}
-			set
-			{
-				if ((this._nombreprod != value))
-				{
-					this._nombreprod = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio", DbType="Int NOT NULL")]
-		public int precio
-		{
-			get
-			{
-				return this._precio;
-			}
-			set
-			{
-				if ((this._precio != value))
-				{
-					this._precio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad", DbType="Int NOT NULL")]
-		public int cantidad
-		{
-			get
-			{
-				return this._cantidad;
-			}
-			set
-			{
-				if ((this._cantidad != value))
-				{
-					this._cantidad = value;
-				}
-			}
-		}
-	}
-	
 	public partial class select_categoriaResult
 	{
 		
@@ -1240,6 +1160,8 @@ namespace API_Puesto_Venta.Models
 	public partial class select_productosResult
 	{
 		
+		private int _cod_prod;
+		
 		private string _nombreprod;
 		
 		private string _marca;
@@ -1252,6 +1174,22 @@ namespace API_Puesto_Venta.Models
 		
 		public select_productosResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cod_prod", DbType="Int NOT NULL")]
+		public int cod_prod
+		{
+			get
+			{
+				return this._cod_prod;
+			}
+			set
+			{
+				if ((this._cod_prod != value))
+				{
+					this._cod_prod = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreprod", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
@@ -1298,6 +1236,104 @@ namespace API_Puesto_Venta.Models
 				if ((this._nombre_cat != value))
 				{
 					this._nombre_cat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio", DbType="Int NOT NULL")]
+		public int precio
+		{
+			get
+			{
+				return this._precio;
+			}
+			set
+			{
+				if ((this._precio != value))
+				{
+					this._precio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantidad", DbType="Int NOT NULL")]
+		public int cantidad
+		{
+			get
+			{
+				return this._cantidad;
+			}
+			set
+			{
+				if ((this._cantidad != value))
+				{
+					this._cantidad = value;
+				}
+			}
+		}
+	}
+	
+	public partial class select_carritoResult
+	{
+		
+		private int _cod_des;
+		
+		private int _cod_prod;
+		
+		private string _nombreprod;
+		
+		private int _precio;
+		
+		private int _cantidad;
+		
+		public select_carritoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cod_des", DbType="Int NOT NULL")]
+		public int cod_des
+		{
+			get
+			{
+				return this._cod_des;
+			}
+			set
+			{
+				if ((this._cod_des != value))
+				{
+					this._cod_des = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cod_prod", DbType="Int NOT NULL")]
+		public int cod_prod
+		{
+			get
+			{
+				return this._cod_prod;
+			}
+			set
+			{
+				if ((this._cod_prod != value))
+				{
+					this._cod_prod = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreprod", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombreprod
+		{
+			get
+			{
+				return this._nombreprod;
+			}
+			set
+			{
+				if ((this._nombreprod != value))
+				{
+					this._nombreprod = value;
 				}
 			}
 		}
